@@ -1,5 +1,3 @@
-import { CORE_CONCEPTS } from "../data.js";
-
 export const CoreConcepts = ({ title, description, image }) => {
   return (
     <li>

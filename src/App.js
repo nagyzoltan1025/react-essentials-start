@@ -1,5 +1,6 @@
-import Header from './components/Header.jsx'
-import CoreConcepts from './components/CoreConcepts.jsx'
+import { CORE_CONCEPTS } from "./data.js";
+import Header from "./components/Header.jsx";
+import CoreConcepts from "./components/CoreConcepts.jsx";
 
 function App() {
   return (
