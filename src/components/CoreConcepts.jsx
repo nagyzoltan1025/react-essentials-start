@@ -1,6 +1,6 @@
 import { CORE_CONCEPTS } from "../data.js";
 
-export default const CoreConcepts = ({ title, description, image }) => {
+export const CoreConcepts = ({ title, description, image }) => {
   return (
     <li>
       <img src={image} alt={title} />
@@ -9,3 +9,5 @@ export default const CoreConcepts = ({ title, description, image }) => {
     </li>
   );
 };
+
+export default CoreConcepts;
