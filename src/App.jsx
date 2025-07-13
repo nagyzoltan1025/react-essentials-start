@@ -5,7 +5,23 @@ import TabButton from "./components/TabButton";
 import {useState} from "react";
 
 function App() {
-    const [selectedTopic, setSelectedTopic] = useState("components")
+    const [selectedTopic, setSelectedTopic] = useState()
+
+    let tabContent = (<p>Please select a tab</p>)
+
+    if (selectedTopic) {
+        tabContent = (
+            <div id={"tab-content"}>
+                <h3>{EXAMPLES[selectedTopic].title}</h3>
+                <p>{EXAMPLES[selectedTopic].description}</p>
+                <pre>
+                      <code>
+                          {EXAMPLES[selectedTopic].code}
+                      </code>
+                  </pre>
+            </div>
+        )
+    }
 
     const handleSelect = ({selectedButton}) => {
         console.log(`Hello world! - selected! ${selectedButton}`);
@@ -44,16 +60,7 @@ function App() {
                       handleSelect({selectedButton: "state"})
                   }}>State</TabButton>
               </menu>
-              {selectedTopic}
-              <div id={"tab-content"}>
-                  <h3>{EXAMPLES[selectedTopic].title}</h3>
-                  <p>{EXAMPLES[selectedTopic].description}</p>
-                  <pre>
-                      <code>
-                          {EXAMPLES[selectedTopic].code}
-                      </code>
-                  </pre>
-              </div>
+              {tabContent}
           </section>
       </main>
     </div>
